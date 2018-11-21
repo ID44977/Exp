@@ -26,6 +26,7 @@ public class Test2 extends JFrame{
         keyevent1.addComponentToPanel(account);
         keyevent1.pack();
         keyevent1.setVisible(true);
+        account.showBar();
         //("之前余额  取款额  当前的余额\n");
         for (int i = 1; i <= 100; i++) {
             service.execute(new Withdraw(account, 1));
