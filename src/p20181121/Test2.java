@@ -20,16 +20,21 @@ public class Test2 extends JFrame{
         this.setLocation(240,240);
     }
     public static void main(String[] args) {
+
         Account account = new Account();
         ExecutorService service = Executors.newFixedThreadPool(100);
+
         keyevent1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         keyevent1.addComponentToPanel(account);
         keyevent1.pack();
         keyevent1.setVisible(true);
+
         account.showBar();
-        //("之前余额  取款额  当前的余额\n");
+        //System.out.println("之前余额  取款额  当前的余额\n");
+        double num;
         for (int i = 1; i <= 100; i++) {
-            service.execute(new Withdraw(account, 1));
+            num = (int)(Math.random()*100);
+            service.execute(new Withdraw(account,num));
         }
         service.shutdown();
         while (!service.isTerminated()) {
