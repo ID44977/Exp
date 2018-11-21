@@ -23,6 +23,9 @@ public class Account {
     public double getBalance() {
         return balance;
     }
+    public void showBar(){
+        textArea.setText(textArea.getText() + "之前余额    取款额    当前余额\n");
+    }
     public void showBalance(){
         textArea.setText(textArea.getText() + "账户余额: " + getBalance() + "元\n");
     }
