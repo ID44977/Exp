@@ -1,3 +1,4 @@
+/*
 package p20181128;
 
 import java.awt.*;
@@ -45,6 +46,7 @@ public class Framework extends JFrame{
             String message;
             try {
                 message = br.readLine();
+                receiveArea.setText(receiveArea.getText() + "waiting...\n");
                 receiveArea.append(getCurrentTime() + "\nSever:\n" + message + "\n");
             } catch (IOException e) {
                 isExit = false;
@@ -81,17 +83,17 @@ public class Framework extends JFrame{
 
         receiveArea.setEditable(false);
 
-        JScrollPane receiveAreaJsp = new JScrollPane(receiveArea);
-        JScrollPane inputAreaJsp = new JScrollPane(inputArea);
+        JScrollPane receiveScrollPane = new JScrollPane(receiveArea);
+        JScrollPane inputScrollPane = new JScrollPane(inputArea);
 
-        receiveArea.setFont(new Font("Monaco", Font.PLAIN, 15));
-        inputArea.setFont(new Font("Monaco", Font.PLAIN, 15));
+        //receiveArea.setFont(new Font("Monaco", Font.PLAIN, 15));
+        //inputArea.setFont(new Font("Monaco", Font.PLAIN, 15));
 
        // receiveArea.setBorder(new LineBorder(new Color(127,157,185), 1, false));
         center.setLayout(new BorderLayout());
 
-        center.add(receiveAreaJsp, BorderLayout.CENTER);
-        center.add(inputAreaJsp, BorderLayout.SOUTH);
+        center.add(receiveScrollPane, BorderLayout.CENTER);
+        center.add(inputScrollPane, BorderLayout.SOUTH);
         this.add(center, BorderLayout.CENTER);
     }
 
@@ -105,9 +107,10 @@ public class Framework extends JFrame{
     }
 
     private void initPanel() {
-        this.setLocation(500, 50);
-        this.setSize(600, 600);
+        this.setLocation(400, 50);
+        this.setSize(500, 500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
 }
+*/
